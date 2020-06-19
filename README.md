@@ -42,7 +42,7 @@ To import this project:
 	
 	this.foodService.setListElement("VEGETABLES");
 
-	``` 
+	```
 
 PS : I will add more features in the future	
 
