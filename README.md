@@ -34,14 +34,13 @@ The Goal of this project is to use all the important aspects of angular:
 
 ## Import Project
 To import this project:
-	- git clone
-	- run ' npm install '
-	- create a simple firebase project
-	- uncomment the code below in src/app/food_component/vegetable/vegetable.component.ts
+- git clone
+- run ' npm install '
+- create a simple firebase project
+- uncomment the code below in src/app/food_component/vegetable/vegetable.component.ts
 	```
 	
 	this.foodService.setListElement("VEGETABLES");
-
 	```
 
 PS : I will add more features in the future	
