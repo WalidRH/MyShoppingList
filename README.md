@@ -14,14 +14,35 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Description
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+This is a very simple 'dump' side project, that I created a long time ago, but is's quite useful.
+This project is a Shopping list application for groceries; it manages all kind of foods ( liqudes, sucres, milks, flours, cereals, vegetbales, fruits, meats, fishs, eggs ). So we can add food to the list, configure the price, unit, quantity of the food ....
+I didn't add some fancy CSS style because it's not the purpose of this project -- maybe I will add it in the future-- .
+The Goal of this project is to use all the important aspects of angular:
+	- [x] Components & Data-Binding
+	- [x] Directives
+	- [x] Services & dependency Injection
+	- [x] Routing
+	- [x] Observables
+	- [x] forms
+	- [ ] Pipes
+	- [x] Handling HTTP
+	- [x] Authentication
+	- [ ] optimizations & NgModules
+	- [ ] animations & Testing
 
-## Running end-to-end tests
+## Import Project
+To import this project:
+	- git clone
+	- run ' npm install '
+	- create a simple firebase project
+	- uncomment the code below in src/app/food_component/vegetable/vegetable.component.ts
+	```
+	
+	this.foodService.setListElement("VEGETABLES");
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+	``` 
 
-## Further help
+PS : I will add more features in the future	
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
