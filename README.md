@@ -20,17 +20,17 @@ This is a very simple 'dump' side project, that I created a long time ago, but i
 This project is a Shopping list application for groceries; it manages all kind of foods ( liqudes, sucres, milks, flours, cereals, vegetbales, fruits, meats, fishs, eggs ). So we can add food to the list, configure the price, unit, quantity of the food ....
 I didn't add some fancy CSS style because it's not the purpose of this project -- maybe I will add it in the future-- .
 The Goal of this project is to use all the important aspects of angular:
-	- [x] Components & Data-Binding
-	- [x] Directives
-	- [x] Services & dependency Injection
-	- [x] Routing
-	- [x] Observables
-	- [x] forms
-	- [ ] Pipes
-	- [x] Handling HTTP
-	- [x] Authentication
-	- [ ] optimizations & NgModules
-	- [ ] animations & Testing
+- [x] Components & Data-Binding
+- [x] Directives
+- [x] Services & dependency Injection
+- [x] Routing
+- [x] Observables
+- [x] forms
+- [ ] Pipes
+- [x] Handling HTTP
+- [x] Authentication
+- [ ] optimizations & NgModules
+- [ ] animations & Testing
 
 ## Import Project
 To import this project:
