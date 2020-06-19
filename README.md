@@ -39,7 +39,6 @@ To import this project:
 - create a simple firebase project
 - uncomment the code below in src/app/food_component/vegetable/vegetable.component.ts
 	```
-	
 	this.foodService.setListElement("VEGETABLES");
 	```
 
