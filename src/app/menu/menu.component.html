@@ -1,0 +1,6 @@
+<div *ngFor="let item of menuItems">
+    <a role="presentation"  [routerLink]="'/'+item.name" class="list-group-item list-group-item-action justify-content-between d-flex align-items-center" routerLinkActive="active">
+        {{item.name}}
+        <span class="badge badge-default badge-pill">14</span>
+    </a>
+</div> 

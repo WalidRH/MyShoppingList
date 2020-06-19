@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <router-outlet></router-outlet>
+    <div class="alert alert-danger text-center col-6" *ngIf="errorOccurred">
+        <p> {{ errorOccurred }} </p>
+    </div>
+    <div class="feature-wrapper pt-5 pb-5 mt-5 mt-lg-0 justify-content-center d-flex">
+        <div class="align-items-center justify-content-start d-flex flex-wrap flex-shrink">
+            <div class="my-card text-center mb-3 mb-md-0 rounded border" *ngFor="let item of foodArray">
+                <!-- content -->
+                <app-food-content (navigation)="checkIsNavigate($event)" [foodElement]="item" [categorie]="categorie">
+                </app-food-content>
+            </div>
+        </div>
+    </div>
+</div>

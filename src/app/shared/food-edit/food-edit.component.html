@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img [src]="shoppingItemEdit.photoURL">
+            <div class="name-block"> {{ shoppingItemEdit.name }} </div>
+        </div>
+        <div class="col">
+            <form (ngSubmit)="onSubmit()" #form="ngForm" class="form_shape">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="price"> Price * </label>
+                        </div>
+                        <div class="col">
+                            <span><input id="price" type="number" step="0.1" class="form-control" [(ngModel)]="price" name="price"
+                                    min="0" required  #priceFood="ngModel" /></span>
+                            <span class="form-text text-muted" *ngIf="priceFood.invalid && !priceFood.untouched">please set a price</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="unit"> Unit * </label>
+                        </div>
+                        <div class="col">
+                            <span>
+                                <select id="unit" name="unit" [(ngModel)]="unit" class="form-control" required #unitFood="ngModel" >
+                                    <option *ngFor="let unit of unitMeasurement" [value]="unit">
+                                        {{ unit }}
+                                    </option>
+                                </select>
+                            </span>
+                            <span class="form-text text-muted" *ngIf="unitFood.invalid && !unitFood.untouched">please set a unit</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="quantity"> Quantity </label>
+                        </div>
+                        <div class="col">
+                            <span><input id="quantity" type="number" class="form-control" [(ngModel)]="quantity" name="quantity" min="0"
+                                    required /></span>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="price == 0 || !unit "> Set </button>
+                <button class="btn btn-success" [disabled]="form.invalid || quantity == 0 "> add </button>
+                <button class="btn btn-danger" > cancel </button>
+
+            </form>
+        </div>
+    </div>
+</div>
