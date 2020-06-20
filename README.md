@@ -16,23 +16,31 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Description
 
-this is a simple " dump " project that I created a long ago. This project have all the importent aspects of angular :
-	* components & data-binding
-	* directives
-	* Services & dependency injection
-	* routing
-	* Observables
-	* forms
-	* Handling HTTP
-	* Authentication
+This is a very simple 'dump' side project, that I created a long time ago, but is's quite useful.
+This project is a Shopping list application for groceries; it manages all kind of foods ( liqudes, sucres, milks, flours, cereals, vegetbales, fruits, meats, fishs, eggs ). So we can add food to the list, configure the price, unit, quantity of the food ....
+I didn't add some fancy CSS style because it's not the purpose of this project -- maybe I will add it in the future-- .
+The Goal of this project is to use all the important aspects of angular:
+- [x] Components & Data-Binding
+- [x] Directives
+- [x] Services & dependency Injection
+- [x] Routing
+- [x] Observables
+- [x] forms
+- [ ] Pipes
+- [x] Handling HTTP
+- [x] Authentication
+- [ ] optimizations & NgModules
+- [ ] animations & Testing
 
-# How to use
-	- clone the project
-	- run ' npm install '
-	- create a simple firebase
-	- uncomment the code below, in src/app/food_component/vegetable/vegetable.component.ts
-		<< this.foodService.setListElement("VEGETABLES"); >>
-	
+## Import Project
+To import this project:
+- git clone
+- run ' npm install '
+- create a simple firebase project
+- uncomment the code below in src/app/food_component/vegetable/vegetable.component.ts
+	```
+	this.foodService.setListElement("VEGETABLES");
+	```
 
-PS : I will add some more features in the future
+PS : I will add more features in the future	
 
