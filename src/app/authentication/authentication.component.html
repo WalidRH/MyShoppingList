@@ -1,0 +1,34 @@
+<h1 class="display-1"> Vegetables </h1>
+<div class="shape" [ngClass]="{'alert alert-success' : !error || isSignup , 'alert alert-danger' : error || !isSignup }" *ngIf="error || isSignup">
+    <div *ngIf='!error || isSignup'> <strong>Success!</strong> user name and password has been added successfuly. </div>
+    <div *ngIf='error || !isSignup'> <strong>ERROR!</strong> {{error}}. </div>
+  </div>
+<div class="dalign-self-center location" *ngIf="!error || !isSignup">
+    <form (ngSubmit)="submitButton()" #authForm="ngForm">
+        <!-- setting controls -->
+        <div class="form-group row">
+            <label for="myEmail" class="col-sm-2 col-form-label"> Email </label>
+            <div class="col-sm-10">
+                <input type="email" id="myEmail" class="form-control " [(ngModel)]="emailForm" name="email" required
+                    email #email="ngModel">
+                <span class="help-block" *ngIf="email.invalid && email.touched"> email must be valide ( xxx@example.com
+                    )
+                </span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="myPassword" class="col-sm-2">Password </label>
+            <div class="col-sm-10">
+                <input type="password" id="myPassword" class="form-control" minlength="5" [(ngModel)]="passForm"
+                    name="password" required #password="ngModel">
+                <span class="help-block" *ngIf="password.invalid && password.touched"> password must have at least 5
+                    characters </span>
+            </div>
+        </div>
+        <button class="btn btn-success" style="margin-right: 5px;" type="submit"
+            [disabled]='authForm.invalid'>{{ loginMode ? 'login' : 'signup'}}</button>
+        |
+        <button class="btn btn-primary" style="margin-left: 5px;" type="button" (click)="switching()"> switch to
+            {{ loginMode ? 'signup' : 'login' }} </button>
+    </form>
+</div>
