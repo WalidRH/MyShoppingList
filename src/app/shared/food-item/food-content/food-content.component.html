@@ -1,18 +1,28 @@
-<img [src]="foodElement.photoURL">
-<div class="bg-primary shape">
-    <div class="row">
-        <div class=" col h5 text-light">{{foodElement.name}}</div>
-        <div class="col text-light">{{(foodElement.price !== 0) ? foodElement.price : "_" }} / {{(foodElement.unit) ? foodElement.unit : "_"}}</div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col">
-            <button (click)="onAddToList()" class="btn  btn-outline-light" 
-            [ngClass]="{'btn-success' : isSet , 'btn-danger' : !isSet }" 
-            [disabled]="!isSet"> ADD </button>
+<div class="content">
+    <span class="badge" *ngIf="foodElement.quantity != 0">{{foodElement.quantity}}</span>
+
+    <img [src]="foodElement.photoURL">
+    <div class="bg-primary shape">
+        <div class="row">
+            <div class=" col h5 text-light">{{foodElement.name}}</div>
+            <div class="col text-light">{{(foodElement.price !== 0) ? foodElement.price : "_" }} /
+                {{(foodElement.unit) ? foodElement.unit : "_"}}</div>
         </div>
-        <div class="col">
-            <button (click)="onEditFood()" class="btn btn-info btn-outline-light"> configure </button>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <button (click)="onAddToList()" class="btn  btn-outline-light"
+                    [ngClass]="{'btn-success' : isSet , 'btn-danger' : !isSet }" [disabled]="!isSet"> ADD </button>
+            </div>
+
+            <div class="col" *ngIf="isInFavoriteComp">
+                <button (click)="onRemoveFromList()" class="btn  btn-outline-danger"
+                    [ngClass]="{'btn-light' : isSet , 'btn-danger' : !isSet }" [disabled]="!isSet"> Delete </button>
+            </div>
+
+            <div class="col">
+                <button (click)="onEditFood()" class="btn btn-info btn-outline-light"> configure </button>
+            </div>
         </div>
     </div>
 </div>

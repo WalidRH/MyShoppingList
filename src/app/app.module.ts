@@ -25,9 +25,12 @@ import { EggsComponent } from './food_component/eggs/eggs.component';
 import { FoodItemComponent } from './shared/food-item/food-item.component';
 import { FoodContentComponent } from './shared/food-item/food-content/food-content.component';
 import { FoodEditComponent } from './shared/food-edit/food-edit.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FoodServiceService } from './shared/food-service.service';
 import { HttpFoodServiceService } from './shared/httpServices/http-food-service.service';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+import { AuthInterceptorService } from './authentication/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { HttpFoodServiceService } from './shared/httpServices/http-food-service.
     EggsComponent,
     FoodItemComponent,
     FoodContentComponent,
-    FoodEditComponent
+    FoodEditComponent,
+    AuthenticationComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,13 @@ import { HttpFoodServiceService } from './shared/httpServices/http-food-service.
     FormsModule,
     HttpClientModule
   ],
-  providers: [FoodServiceService, HttpFoodServiceService],
+  providers: [FoodServiceService, HttpFoodServiceService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

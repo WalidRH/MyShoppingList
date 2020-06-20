@@ -10,13 +10,13 @@ import { FoodServiceService } from 'src/app/shared/food-service.service';
 })
 export class FavrotiesComponent implements OnInit {
   
-  categorie : string;
+  categorie: string;
 
-  constructor(private foodService : FoodServiceService) { 
+  constructor(private foodService: FoodServiceService) { 
   }
 
   ngOnInit(): void {
-    this.categorie = "CATEGORIE_FAVORIES";
+    this.categorie = 'CATEGORIE_FAVORIES';
     this.foodService.setArray(this.categorie);
   }
 }

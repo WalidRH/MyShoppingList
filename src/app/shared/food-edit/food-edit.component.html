@@ -43,11 +43,11 @@
                         </div>
                         <div class="col">
                             <span><input id="quantity" type="number" class="form-control" [(ngModel)]="quantity" name="quantity" min="0"
-                                    required /></span>
+                                    required #quantityFood="ngModel" /></span>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit" [disabled]="price == 0 || !unit "> Set </button>
+                <button class="btn btn-primary" type="submit" [disabled]="price == 0 || !unit || quantityFood.invalid "> Set </button>
                 <button class="btn btn-success" [disabled]="form.invalid || quantity == 0 "> add </button>
                 <button class="btn btn-danger" > cancel </button>
 

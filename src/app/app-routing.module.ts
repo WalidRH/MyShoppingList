@@ -12,23 +12,27 @@ import { MeatComponent } from './food_component/meat/meat.component';
 import { FishComponent } from './food_component/fish/fish.component';
 import { EggsComponent } from './food_component/eggs/eggs.component';
 import { VegetableComponent } from './food_component/vegetable/vegetable.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 const routes: Routes = [
-{path:'', component:FavrotiesComponent},
-{path:'My List', component:FavrotiesComponent},
-{path:'liqude', component:LiqudeComponent},
-{path:'sucre', component:SucreComponent},
-{path:'milk', component:MilkComponent},
-{path:'flour', component:FlourComponent},
-{path:'cereal', component:CerealComponent},
-{path:'vegetbales', component:VegetableComponent, children:[
-  {path:'edit/:ref', component:FoodEditComponent}
+{path: '', component: FavrotiesComponent},
+{path: 'auth', component: AuthenticationComponent},
+{path: 'MyList', component: FavrotiesComponent, children: [
+  {path: 'edit/:ref', component: FoodEditComponent}
 ]},
-{path:'fruits', component:FruitsComponent},
-{path:'meat', component:MeatComponent},
-{path:'fish', component:FishComponent},
-{path:'eggs', component:EggsComponent},
+{path: 'liqude', component: LiqudeComponent},
+{path: 'sucre', component: SucreComponent},
+{path: 'milk', component: MilkComponent},
+{path: 'flour', component: FlourComponent},
+{path: 'cereal', component: CerealComponent},
+{path: 'vegetbales', component: VegetableComponent, children: [
+  {path: 'edit/:ref', component: FoodEditComponent}
+]},
+{path: 'fruits', component: FruitsComponent},
+{path: 'meat', component: MeatComponent},
+{path: 'fish', component: FishComponent},
+{path: 'eggs', component: EggsComponent},
 ];
 
 @NgModule({

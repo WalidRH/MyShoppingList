@@ -26,50 +26,51 @@ export class FoodEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.unitMeasurement = ['Kg', 'g', 'L', 'ml', 'peace'];
-    console.log("current route ", this.currentRoute);
-    console.log("ngForm ", this.foodForm);
+    console.log('current route ', this.currentRoute);
+    console.log('ngForm ', this.foodForm);
     // getting Food element info
     this.currentRoute.params.subscribe(
       params => {
-        console.log("param ", params['ref']);
-        this.shoppingItemEdit = this.foodService.getFoodElement(params['ref']);
-        console.log(" Check list  ",this.shoppingItemEdit);
-        if (this.shoppingItemEdit){
+        console.log('param ', params.ref);
+        this.shoppingItemEdit = this.foodService.getFoodElement(params.ref);
+        console.log(' Check list  ', this.shoppingItemEdit);
+        if (this.shoppingItemEdit) {
           this.price = this.shoppingItemEdit.price;
           this.unit = this.shoppingItemEdit.unit;
           this.quantity = this.shoppingItemEdit.quantity;
-        }
-        else{
-          console.log("return to parent");
-          this.route.navigate(['.'],{relativeTo: this.currentRoute.parent});
+        } else {
+          console.log('return to parent');
+          this.route.navigate(['.'], { relativeTo: this.currentRoute.parent});
         }
       }
     );
 
     // getting Fragement
-      this.currentRoute.fragment.subscribe(
+    this.currentRoute.fragment.subscribe(
         fragment => {
           this.fragment = fragment;
         }
-      )
-    console.log("List FOOD ", this.foodService.getFoodList());
+      );
+    console.log('List FOOD ', this.foodService.getFoodList());
   }
 
   onSubmit() {
-    let shoppingElement  = new ShoppingItem(
+    const shoppingElement  = new ShoppingItem(
       this.shoppingItemEdit.ref
-      ,this.shoppingItemEdit.name
-      ,this.unit
-      ,this.quantity
-      ,this.price
-      ,this.shoppingItemEdit.photoURL
+      , this.shoppingItemEdit.name
+      , this.unit
+      , this.quantity
+      , this.price
+      , this.shoppingItemEdit.photoURL
       );
-    console.log("ARRAY categorie : ",this.foodService.getFoodArray());
-    console.log("fragment");
+    console.log('ARRAY categorie : ', this.foodService.getFoodArray());
+    console.log('fragment');
     this.foodService.updateFoodElement(
       shoppingElement
-      ,Categorie.categorieType(this.fragment)
-      ,this.shoppingItemEdit.ref
+      , Categorie.categorieType(this.fragment)
+      , this.shoppingItemEdit.ref
+      , null
+      , false
     );
   }
 }

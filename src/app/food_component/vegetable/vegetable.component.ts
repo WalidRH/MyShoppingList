@@ -8,8 +8,8 @@ import { FoodServiceService } from 'src/app/shared/food-service.service';
   styleUrls: ['./vegetable.component.scss']
 })
 export class VegetableComponent implements OnInit {
-  categorie : string;
-  constructor(private foodService : FoodServiceService) { 
+  categorie: string;
+  constructor(private foodService: FoodServiceService) { 
   }
 
   ngOnInit(): void {
@@ -19,4 +19,3 @@ export class VegetableComponent implements OnInit {
    this.foodService.setArray(this.categorie);
   }
 }
- 

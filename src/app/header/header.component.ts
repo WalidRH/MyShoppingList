@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,9 +14,12 @@ export class HeaderComponent implements OnInit {
    "AR"
   ];
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
 
+  authenticate(){
+    this.route.navigate(['/auth']);
+  }
 }

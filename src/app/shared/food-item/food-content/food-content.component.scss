@@ -9,3 +9,17 @@ hr{
   background-color: red;
   color: red;
 }
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 7px 10px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+}
+.content {
+  position: relative;
+  display: inline-block;
+ 
+}
