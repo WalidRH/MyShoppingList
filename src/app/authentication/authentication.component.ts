@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from './authentication.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class AuthenticationComponent implements OnInit {
   isSignup: boolean;
   isLoading = false;
   error: string;
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private route: Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class AuthenticationComponent implements OnInit {
         this.isSignup = (!this.loginMode && responseData.idToken) ? true : false;
         console.log("SignUP : ", this.isSignup);
         this.isLoading = false;
+        this.route.navigate(['/MyList']);
       },
       errorthrown => {
         console.log('ERROR ', errorthrown);

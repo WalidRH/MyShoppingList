@@ -92,7 +92,8 @@ export class FoodServiceService {
     }
     this.httpFoodService.setFoodCategorie(categorie, newElement, ref).subscribe(
       (DataResponse) => {
-        console.log('GET DataResponse ', DataResponse.ref);
+        console.log('WAL :: GET DataResponse ', DataResponse);
+        console.log('WAL :: GET DataResponse REF ', DataResponse.ref);
         const index = this.shoppingArrayFood.indexOf(this.getFoodElement(ref));
         this.shoppingArrayFood[index] = DataResponse;
         // tslint:disable-next-line: max-line-length
@@ -105,7 +106,7 @@ export class FoodServiceService {
               ? this.updateFoodElement(
                 DataResponse,
                 Categorie.categorieType('CATEGORIE_FAVORIES'),
-                DataResponse.ref,
+                ref,
                 categorie,
                 false )
               : true;

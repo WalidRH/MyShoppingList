@@ -52,6 +52,12 @@ export class FoodContentComponent implements OnInit, OnChanges {
     this.navigation.emit({
       isNavigate: true
     });
+    // scrolling to the top
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   onRemoveFromList() {

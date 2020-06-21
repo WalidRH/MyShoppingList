@@ -19,7 +19,7 @@ export class FoodEditComponent implements OnInit {
   price: number;
   unit: string;
   quantity: number;
-  fragment : string;
+  fragment: string;
   shoppingItemEdit: ShoppingItem;
   constructor(private currentRoute: ActivatedRoute, private route: Router, private foodService: FoodServiceService) {
   }
@@ -72,5 +72,28 @@ export class FoodEditComponent implements OnInit {
       , null
       , false
     );
+  }
+
+  onAdd() {
+    const shoppingElement  = new ShoppingItem(
+      this.shoppingItemEdit.ref
+      , this.shoppingItemEdit.name
+      , this.unit
+      , this.quantity
+      , this.price
+      , this.shoppingItemEdit.photoURL
+      );
+    console.log('WAL ShoppingElement ', shoppingElement.ref);
+    this.foodService.updateFoodElement(
+      shoppingElement
+      , Categorie.categorieType(this.fragment)
+      , this.shoppingItemEdit.ref
+      , null
+      , true
+    );
+  }
+
+  onCancel() {
+    this.route.navigate(['../../'], {relativeTo: this.currentRoute});
   }
 }
