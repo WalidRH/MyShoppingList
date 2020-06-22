@@ -1,6 +1,6 @@
 import { Categorie } from './../Categorie';
-import { FoodServiceService } from 'src/app/shared/food-service.service';
-import { ShoppingItem } from 'src/app/shared/shopping-item.js';
+import { FoodServiceService } from '../../shared/food-service.service';
+import { ShoppingItem } from '../../shared/shopping-item';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit, EventEmitter, Output, ViewChild, NgModule } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';

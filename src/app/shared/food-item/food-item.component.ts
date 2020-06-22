@@ -1,4 +1,4 @@
-import { ShoppingItem } from 'src/app/shared/shopping-item.js';
+import { ShoppingItem } from '../../shared/shopping-item';
 import { Component, OnInit, Input, OnDestroy, OnChanges } from '@angular/core';
 import { FoodServiceService } from '../food-service.service';
 import { Subscription } from 'rxjs';

@@ -1,6 +1,6 @@
 import { Categorie } from './../../shared/Categorie';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FoodServiceService } from 'src/app/shared/food-service.service';
+import { FoodServiceService } from '../../shared/food-service.service';
 
 
 @Component({

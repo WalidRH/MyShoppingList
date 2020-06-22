@@ -1,6 +1,6 @@
 import { HttpFoodServiceService } from './../../shared/httpServices/http-food-service.service';
 import { Component, OnInit } from '@angular/core';
-import { FoodServiceService } from 'src/app/shared/food-service.service';
+import { FoodServiceService } from '../../shared/food-service.service';
 
 @Component({
   selector: 'app-vegetable',
