@@ -1,3 +1,4 @@
+import { AuthenticationService } from './../authentication/authentication.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -13,13 +14,22 @@ export class HeaderComponent implements OnInit {
    "EN",
    "AR"
   ];
-
-  constructor(private route: Router) { }
+  isAuthenticated: boolean;
+  constructor(private route: Router, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    this.authService.authenticatedUser.subscribe(
+      user => {
+        this.isAuthenticated = (user) ? true : false;
+      }
+    );
   }
 
-  authenticate(){
+  authenticate() {
     this.route.navigate(['/auth']);
+  }
+
+  logout() {
+    this.authService.logout();
   }
 }

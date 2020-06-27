@@ -16,7 +16,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 
 
 const routes: Routes = [
-{path: '', component: FavrotiesComponent},
+{path: '', redirectTo: '/auth', pathMatch: 'full'},
 {path: 'auth', component: AuthenticationComponent},
 {path: 'MyList', component: FavrotiesComponent, children: [
   {path: 'edit/:ref', component: FoodEditComponent}

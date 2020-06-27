@@ -14,6 +14,7 @@ export class AuthenticationService {
   static LOGIN = 'login';
   static SUGNUP = 'signup';
   authenticatedUser = new  BehaviorSubject<User>(null);
+  private timeOut: any;
   constructor( private http: HttpClient , private route: Router) { }
 
   authentication( emailInput: string, passwordInput: string, operation: string) {
@@ -73,6 +74,7 @@ export class AuthenticationService {
           // Storing the User
           console.log('Store User => ', user);
           this.authenticatedUser.next(user);
+          this.autoLogout(+responseData.expiresIn * 1000);
           localStorage.setItem('UserData', JSON.stringify(user));
         }
       )
@@ -99,7 +101,28 @@ export class AuthenticationService {
     if ( user.token ) {
       console.log('Auto Login User ', user);
       this.authenticatedUser.next(user);
+      const expireTime = new Date(userData._TokenExpirationDate).getTime() - new Date().getTime();
+      this.autoLogout(expireTime);
     }
+  }
+
+  logout() {
+    this.authenticatedUser.next(null);
+    localStorage.removeItem('UserData');
+    if ( this.timeOut ) {
+      clearTimeout(this.timeOut);
+    }
+    this.timeOut = null;
+    this.route.navigate(['/auth']);
+  }
+
+  autoLogout(exprationDuration: number) {
+    this.timeOut = setTimeout(
+      () => {
+        this.logout();
+      },
+      5000
+    );
   }
 
 }

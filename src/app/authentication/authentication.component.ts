@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
 
-  loginMode = false;
+  loginMode = true;
   emailForm: string;
   passForm: string;
   isSignup: boolean;
