@@ -121,7 +121,7 @@ export class AuthenticationService {
       () => {
         this.logout();
       },
-      5000
+      exprationDuration
     );
   }
 

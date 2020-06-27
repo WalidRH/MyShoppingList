@@ -1,9 +1,8 @@
-<h1 class="display-1"> Vegetables </h1>
-<div class="shape" [ngClass]="{'alert alert-success' : !error || isSignup , 'alert alert-danger' : error || !isSignup }" *ngIf="error || isSignup">
-    <div *ngIf='!error || isSignup'> <strong>Success!</strong> user name and password has been added successfuly. </div>
-    <div *ngIf='error || !isSignup'> <strong>ERROR!</strong> {{error}}. </div>
+<h1 class="display-1"> Authentication </h1>
+<div class="shape" [ngClass]="{ 'alert alert-danger' : 'errors' }" *ngIf="error">
+    <div *ngIf='error'> <strong>ERROR!</strong> {{error}}. </div>
   </div>
-<div class="dalign-self-center location" *ngIf="!error || !isSignup">
+<div class="dalign-self-center location">
     <form (ngSubmit)="submitButton()" #authForm="ngForm">
         <!-- setting controls -->
         <div class="form-group row">
