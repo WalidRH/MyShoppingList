@@ -1,3 +1,4 @@
+import { AuthGuardService } from './shared/auth-guard.service';
 import { FoodEditComponent } from './shared/food-edit/food-edit.component';
 import { FavrotiesComponent } from './food_component/favroties/favroties.component';
 import { NgModule } from '@angular/core';
@@ -18,7 +19,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 const routes: Routes = [
 {path: '', redirectTo: '/auth', pathMatch: 'full'},
 {path: 'auth', component: AuthenticationComponent},
-{path: 'MyList', component: FavrotiesComponent, children: [
+{path: 'MyList', component: FavrotiesComponent, canActivate: [AuthGuardService], canActivateChild: [AuthGuardService] , children: [
   {path: 'edit/:ref', component: FoodEditComponent}
 ]},
 {path: 'liqude', component: LiqudeComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
 {path: 'milk', component: MilkComponent},
 {path: 'flour', component: FlourComponent},
 {path: 'cereal', component: CerealComponent},
-{path: 'vegetbales', component: VegetableComponent, children: [
+{path: 'vegetbales', component: VegetableComponent, canActivateChild: [AuthGuardService], children: [
   {path: 'edit/:ref', component: FoodEditComponent}
 ]},
 {path: 'fruits', component: FruitsComponent},
