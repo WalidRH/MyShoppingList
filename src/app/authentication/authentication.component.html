@@ -2,6 +2,8 @@
 <div class="shape" [ngClass]="{ 'alert alert-danger' : 'errors' }" *ngIf="error">
     <div *ngIf='error'> <strong>ERROR!</strong> {{error}}. </div>
   </div>
+
+ ------>  {{ 'DESCRIPTION' | translate }}
 <div class="dalign-self-center location">
     <form (ngSubmit)="submitButton()" #authForm="ngForm">
         <!-- setting controls -->

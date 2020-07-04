@@ -1,3 +1,4 @@
+import { FoodServiceService } from './../shared/food-service.service';
 import { AuthenticationService } from './../authentication/authentication.service';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit {
    "AR"
   ];
   isAuthenticated: boolean;
-  constructor(private route: Router, private authService: AuthenticationService) { }
+
+  constructor(private route: Router, private authService: AuthenticationService, private foodService: FoodServiceService) { }
 
   ngOnInit(): void {
     this.authService.authenticatedUser.subscribe(
@@ -31,5 +33,10 @@ export class HeaderComponent implements OnInit {
 
   logout() {
     this.authService.logout();
+  }
+
+  translateTo(language: string ) {
+    this.foodService.translation.next(language);
+    console.log('WAL :: LANGUAGE ', language);
   }
 }

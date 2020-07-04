@@ -20,8 +20,8 @@
       <mat-form-field appearance="outline" class="select_shape" floatLabel="never">
         <mat-label class="text-light font-weight-bolder">Language</mat-label>
         <mat-select class="bg-primary text-light">
-          <mat-option *ngFor="let language of listLanguage" [value]="language" class="bg-primary text-light">
-            {{language}}
+          <mat-option *ngFor="let language of listLanguage" [value]="language" class="bg-primary text-light" (click)="translateTo(language)">
+            {{language | lowercase}}
           </mat-option>
         </mat-select>
       </mat-form-field>

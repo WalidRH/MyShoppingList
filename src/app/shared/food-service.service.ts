@@ -12,6 +12,7 @@ export class FoodServiceService {
   private listFood = new Subject<ShoppingItem[]>();
   private shoppingArrayFood: ShoppingItem[];
   errorThorwn = new Subject<string>();
+  translation = new Subject<string>();
   Subscription: Subscription;
 
   constructor(private httpFoodService: HttpFoodServiceService) {}

@@ -31,6 +31,8 @@ import { HttpFoodServiceService } from './shared/httpServices/http-food-service.
 import { AuthenticationComponent } from './authentication/authentication.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './authentication/auth-interceptor.service';
+import { TranslatePipe } from './shared/translate.pipe';
+import { TotalComponent } from './food_component/favroties/total/total.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { AuthInterceptorService } from './authentication/auth-interceptor.servic
     FoodContentComponent,
     FoodEditComponent,
     AuthenticationComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    TranslatePipe,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

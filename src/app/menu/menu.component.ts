@@ -8,13 +8,13 @@ import menu  from '../../assets/menu_items.json';
 })
 export class MenuComponent implements OnInit {
 
-  menuItems : {name : string }[];
+  menuItems: {name : string }[];
   constructor() { }
 
   ngOnInit(): void {
     this.menuItems = menu;
 
-    console.log("MENU ==> ",this.menuItems);
+    console.log("MENU ==> ", this.menuItems);
   }
 
 }
