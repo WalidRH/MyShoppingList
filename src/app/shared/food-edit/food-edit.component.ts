@@ -72,6 +72,7 @@ export class FoodEditComponent implements OnInit {
       , null
       , false
     );
+    this.route.navigate(['.'], { relativeTo: this.currentRoute.parent});
   }
 
   onAdd() {

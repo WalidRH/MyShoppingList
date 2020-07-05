@@ -35,13 +35,14 @@ export class FoodContentComponent implements OnInit, OnChanges {
   onAddToList() {
     console.log('click');
     this.foodElement.quantity += 1;
+    console.log('foodElement To Add to the List', this.foodElement);
     // tslint:disable-next-line: max-line-length
     const isUpdated = this.foodService.updateFoodElement(this.foodElement, Categorie.categorieType(this.categorie), this.foodElement.ref, null, true);
 
   }
 
   onEditFood() {
-    console.log('FoodElemnt Ref ', this.foodElement);
+    console.log('FoodElemnt Ref ', this.foodElement.ref);
     this.route.navigate(
       ['edit', this.foodElement.ref],
       {

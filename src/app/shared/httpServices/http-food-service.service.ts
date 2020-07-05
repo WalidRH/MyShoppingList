@@ -17,7 +17,9 @@ export class HttpFoodServiceService {
 
   setFoodCategorie(categorie: string, newElement: ShoppingItem, ref: string) {
     console.log('Element to PUT ', newElement);
+    console.log('the REF =======> ', ref);
     const url = 'https://myshoppinglist-ead47.firebaseio.com/' + categorie + '/' + ref + '.json';
+    console.log('the URL =====> ', url);
     return this.http.put< ShoppingItem >(
       url,
       newElement
