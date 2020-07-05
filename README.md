@@ -26,7 +26,7 @@ The Goal of this project is to use all the important aspects of angular:
 - [x] Routing
 - [x] Observables
 - [x] forms
-- [ ] Pipes
+- [x] Pipes
 - [x] Handling HTTP
 - [x] Authentication
 - [ ] optimizations & NgModules
