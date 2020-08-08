@@ -12,7 +12,7 @@ import { MeatComponent } from './meat/meat.component';
 import { FishComponent } from './fish/fish.component';
 import { EggsComponent } from './eggs/eggs.component';
 import { SharedModule } from '../shared/shared.module';
-import { FoodListRouterModule } from './food-list.router.module';
+import { FoodListRouterModule } from './food-list-router.module';
 
 
 

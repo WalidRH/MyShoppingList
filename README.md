@@ -29,7 +29,7 @@ The Goal of this project is to use all the important aspects of angular:
 - [x] Pipes
 - [x] Handling HTTP
 - [x] Authentication
-- [x] optimizations & NgModules
+- [ ] optimizations & NgModules
 - [ ] animations & Testing
 
 ## Import Project

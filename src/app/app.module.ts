@@ -14,7 +14,6 @@ import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FoodServiceService } from './shared/food-service.service';
 import { HttpFoodServiceService } from './shared/httpServices/http-food-service.service';
-import { AuthenticationModuleModule } from './authentication/authentication-module/authentication-module.module';
 import { AuthInterceptorService } from './authentication/auth-interceptor.service';
 import { SharedModule } from './shared/shared.module';
 import { FoodListModule } from './food_component/food-list.module';
@@ -36,7 +35,6 @@ import { FoodListModule } from './food_component/food-list.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    AuthenticationModuleModule,
     SharedModule,
     FoodListModule
   ],
