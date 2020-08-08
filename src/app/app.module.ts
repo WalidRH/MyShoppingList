@@ -17,6 +17,7 @@ import { HttpFoodServiceService } from './shared/httpServices/http-food-service.
 import { AuthInterceptorService } from './authentication/auth-interceptor.service';
 import { SharedModule } from './shared/shared.module';
 import { FoodListModule } from './food_component/food-list.module';
+import { AuthenticationModuleModule } from './authentication/authentication-module/authentication-module.module';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FoodListModule } from './food_component/food-list.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
+    AuthenticationModuleModule,
     SharedModule,
     FoodListModule
   ],
