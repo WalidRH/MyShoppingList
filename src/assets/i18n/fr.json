@@ -1,0 +1,9 @@
+{
+    "HEADER": {
+      "AUTHENTICATE": "S'AUTHENTIFIER",
+      "LOGOUT": "SE DECONNECTER"
+    },
+    "AUTHENTICATION": {
+      "PASSWORD": "Mot de passe"
+    }
+  }

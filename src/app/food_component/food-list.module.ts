@@ -10,7 +10,7 @@ import { FlourComponent } from './flour/flour.component';
 import { FruitsComponent } from './fruits/fruits.component';
 import { MeatComponent } from './meat/meat.component';
 import { SharedModule } from '../shared/shared.module';
-import { FoodListRouterModule } from './food-list-router.module';
+import { FoodListRouterModule } from './food-list.router.module';
 import { VegetableModule } from './vegetable/module/vegetable.module';
 import { FavoriteModule } from './favroties/module/favorites.module';
 import { FlourModule } from './flour/module/flour.module';

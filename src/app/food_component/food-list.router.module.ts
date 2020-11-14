@@ -1,7 +1,7 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FavoriteModule } from './favroties/favorite/favorite.module';
+import { FavoriteModule } from './favroties/module/favorites.module';
 import { VegetableComponent } from './vegetable/vegetable.component';
 import { LiqudeComponent } from './liqude/liqude.component';
 import { SucreComponent } from './sucre/sucre.component';

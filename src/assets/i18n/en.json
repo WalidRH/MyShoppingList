@@ -1,0 +1,9 @@
+{
+    "HEADER": {
+      "AUTHENTICATE": "AUTHENTICATE",
+      "LOGOUT": "LOGOUT"
+    },
+    "AUTHENTICATION": {
+      "PASSWORD": "Password"
+    }
+  }

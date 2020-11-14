@@ -10,18 +10,18 @@
       <div class="separator"></div>
       <div *ngIf="!isAuthenticated">
         <button class="btn btn-success btn-outline-light btn_shape " (click)="authenticate()"
-          type="button">Authenticate</button>
+          type="button">{{ 'HEADER.AUTHENTICATE' | translate }}</button>
       </div>
       <div *ngIf="isAuthenticated">
         <button class="btn btn-success btn-outline-light btn_shape " (click)="logout()"
-          type="button">Logout</button>
+          type="button">{{ 'HEADER.LOGOUT' | translate }}</button>
       </div>
       <div class="separator"></div>
       <mat-form-field appearance="outline" class="select_shape" floatLabel="never">
         <mat-label class="text-light font-weight-bolder">Language</mat-label>
-        <mat-select class="bg-primary text-light">
-          <mat-option *ngFor="let language of listLanguage" [value]="language" class="bg-primary text-light" (click)="translateTo(language)">
-            {{language | lowercase}}
+        <mat-select class="bg-primary text-light" #langSelect (change)="translate.use(langSelect.value)" >
+          <mat-option *ngFor="let language of translate.getLangs()" [value]="language" class="bg-primary text-light" (click)="translateTo(language)" >
+            {{language | uppercase}}
           </mat-option>
         </mat-select>
       </mat-form-field>
